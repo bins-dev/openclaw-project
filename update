@@ -44,12 +44,12 @@ fi
 # 提取顶层文件名或目录名并去重
 TOP_NAMES=$(echo "$CHANGED_FILES" | cut -d'/' -f1 | sort -u)
 
-# 用中文顿号连接，追加"更新"
-COMMIT_MSG=$(echo "$TOP_NAMES" | paste -sd '、' -)"更新"
+# 用分号连接，追加"更新"
+COMMIT_MSG=$(echo "$TOP_NAMES" | paste -sd ';' -)"更新"
 
 # 提交
 git commit -m "$COMMIT_MSG"
 
 # 推送到远程仓库
-git push origin main
+#git push origin main
 
